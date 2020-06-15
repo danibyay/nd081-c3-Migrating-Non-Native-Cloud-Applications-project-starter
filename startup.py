@@ -1,1 +1,1 @@
-from web.application import app
+from web.app import app
