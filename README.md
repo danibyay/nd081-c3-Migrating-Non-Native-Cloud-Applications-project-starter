@@ -1,5 +1,7 @@
 # TechConf Registration Website
 
+[![Build Status](https://dev.azure.com/A00343953/My%20First%20pipeline%20attempt/_apis/build/status/danibyay.nd081-c3-Migrating-Non-Native-Cloud-Applications-project-starter?branchName=master)](https://dev.azure.com/A00343953/My%20First%20pipeline%20attempt/_build/latest?definitionId=8&branchName=master)
+
 ## Project Overview
 The TechConf website allows attendees to register for an upcoming conference. Administrators can also view the list of attendees and notify all attendees via a personalized email message.
 
