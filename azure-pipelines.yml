@@ -9,7 +9,6 @@ trigger:
 variables:
   # Azure Resource Manager connection created during pipeline creation
   azureServiceConnectionId: 'b13fa955-7f25-4182-b06b-c49c7f77231a'
-  
   # Web app name
   webAppName: 'migration2service'
 
@@ -37,7 +36,7 @@ stages:
       inputs:
         versionSpec: '$(pythonVersion)'
       displayName: 'Use Python $(pythonVersion)'
-    
+
     - script: |
         python -m venv antenv
         source antenv/bin/activate
@@ -73,7 +72,6 @@ stages:
       runOnce:
         deploy:
           steps:
-          
           - task: UsePythonVersion@0
             inputs:
               versionSpec: '$(pythonVersion)'
@@ -85,4 +83,4 @@ stages:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'gunicorn --bind=0.0.0.0 --workers=4 startup:app'
+              startUpCommand: 'gunicorn --bind=0.0.0.0 --workers=4 application:app'
